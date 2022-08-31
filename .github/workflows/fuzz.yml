@@ -21,9 +21,9 @@ jobs:
     - name: Print clang++ architecture
       run: clang++ -dumpmachine
     - name: Build
-      run: clang++ -fsanitize=address,fuzzer *.c
+      run: clang++ -fsanitize=address,fuzzer *.c -o fuzz
     - name: Run fuzzer
-      run: fuzz
+      run: chmod +x ./fuzz && ./fuzz
     - name: Upload crash file(s)
       uses: actions/upload-artifact@v3.1.0
       if: failure() && steps.build.outcome == 'success'
