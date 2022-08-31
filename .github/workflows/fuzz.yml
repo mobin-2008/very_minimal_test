@@ -26,7 +26,7 @@ jobs:
       run: chmod +x ./fuzz && ./fuzz
     - name: Upload crash file(s)
       uses: actions/upload-artifact@v3.1.0
-      if: failure() && steps.build.outcome == 'success'
+      if: failure()
       with:
           name: Dinit-minifuzzer_crash-$(date)
           path: src/tests/cptests/fuzz/crash*
