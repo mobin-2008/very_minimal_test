@@ -21,7 +21,7 @@ jobs:
     - name: Print clang++ architecture
       run: clang++ -dumpmachine
     - name: Build
-      run: g++ *.c -o fuzz
+      run: clang++ -fsanitize=address,fuzzer *.c
     - name: Run fuzzer
       run: fuzz
     - name: Upload crash file(s)
