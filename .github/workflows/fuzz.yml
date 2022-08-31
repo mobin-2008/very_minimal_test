@@ -2,9 +2,9 @@ name: Dinit on ubuntu-latest-amd64 minifuzzer
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
   workflow_dispatch:
 
 jobs:
@@ -29,4 +29,4 @@ jobs:
       if: failure()
       with:
           name: Dinit-minifuzzer_crash-$(date)
-          path: src/tests/cptests/fuzz/crash*
+          path: ./crash*
