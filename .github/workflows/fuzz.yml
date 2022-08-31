@@ -28,5 +28,5 @@ jobs:
       uses: actions/upload-artifact@v3.1.0
       if: failure()
       with:
-          name: Dinit-minifuzzer-crash_${{ github.event.repository.updated_at}}
+          name: Dinit-minifuzzer-crash
           path: ./crash*
